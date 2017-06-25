@@ -73,8 +73,9 @@ def findData(studentID):
                 continue
             else:
                 se.add(book)
+                ans['ans_list'].append(book)
                 break
-        ans['ans_list'].append(book)
+        
         # response1 = response1 + str(book) + "</br>"
     # return "<p>" + response1+ "</p>"
     return ans
