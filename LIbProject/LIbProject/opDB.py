@@ -60,14 +60,21 @@ def findData(studentID):
     if lenBook < num:
         num = lenBook
     ans['ans_list'] = []
-    i = num - 1
-    while i != -1:
-        book = books[i]
+    # i = num - 1
+    # while i != -1:
+        # book = books[i]
+        # ans['ans_list'].append(book)
+        # i = i - 1
+    se = set()
+    for i in range(num):
+        while True:
+            book = books[random.randint(0,num-1)]
+            if book in se:
+                continue
+            else:
+                se.add(book)
+                break
         ans['ans_list'].append(book)
-        i = i - 1
-    # for i in range(num):
-    #     book = books[random.randint(0,num-1)]
-    #     ans['ans_list'].append(book)
         # response1 = response1 + str(book) + "</br>"
     # return "<p>" + response1+ "</p>"
     return ans
