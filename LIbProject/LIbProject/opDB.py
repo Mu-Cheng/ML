@@ -57,8 +57,19 @@ def findData(studentID):
     ans['data2'] = "为"+studentID + "推荐的书籍为："
     # response1 = response1 + "<h2>为" + studentID + "推荐的书籍为：" + "</h2>"
     num = 10
+    minNum = 0
+    maxNum = 0
+    if lenBook <= num:
+        minNum = lenBook
+    else:
+        minNum = num
+
     if lenBook < num:
-        num = lenBook
+        maxNum = num
+    else:
+        maxNum = lenBook
+
+
     ans['ans_list'] = []
     # i = num - 1
     # while i != -1:
@@ -66,9 +77,9 @@ def findData(studentID):
         # ans['ans_list'].append(book)
         # i = i - 1
     se = set()
-    for i in range(num):
+    for i in range(minNum):
         while True:
-            book = books[random.randint(0,num-1)]
+            book = books[random.randint(0,lenBook-1)]
             if book in se:
                 continue
             else:
