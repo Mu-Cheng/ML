@@ -11,6 +11,10 @@
         {% csrf_token %}
         <input type="text" name="q">
         <input type="submit" value="Submit">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2">@example.com</span>
+        </div>
     </form>
 
     <h2> {{ data1 }} </h2>
