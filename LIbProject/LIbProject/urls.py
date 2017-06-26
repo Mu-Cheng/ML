@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import *
 from django.contrib import admin
 
-from . import view,opDB,search
+from . import view,opDB,search,settings
 
 urlpatterns = [
     url(r'^$',view.hello),
