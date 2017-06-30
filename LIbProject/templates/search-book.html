@@ -56,8 +56,12 @@
     <form action="/search-book" method="post">
         {% csrf_token %}
         <div class="input-group">
-            <input type="text" name="q">
-            <input type="submit" value="推荐">
+            <tr>
+                <th><input type="text" name="q"></th>
+                <th><input type="submit" value="推荐"></th>
+            </tr>
+            
+            
         </div>
         <!--<div class="input-group">
             <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
