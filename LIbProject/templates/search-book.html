@@ -56,11 +56,12 @@
     <form action="/search-book" method="post">
         {% csrf_token %}
         <div class="input-group">
+            <table>
             <tr>
                 <th><input type="text" name="q" /></th>
                 <th><input type="submit" value="推荐" /></th>
             </tr>
-            
+            </table>
             
         </div>
         <!--<div class="input-group">
