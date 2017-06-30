@@ -61,7 +61,10 @@
     <ol start = 1 style="list-style-position:inside">
         {% for book1 in ans_list %}
             <li>
-            <a href = https://book.douban.com/subject_search?search_text={{ book1 }}>{{ book1 }}</a>
+            <a href = https://book.douban.com/subject_search?search_text={{ book1 }} >
+                <font color="white">{{ book1 }}
+                </font> 
+            </a>
             </li>
     
     {% endfor %}
