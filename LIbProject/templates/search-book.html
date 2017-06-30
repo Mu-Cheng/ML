@@ -50,7 +50,7 @@
     </style>
     <script>
         function isStudentID(){
-            var str = document.form1.add.value;
+            var str = document.searchForm.add.value;
             if(str.length!=8){
                 alert("请输入八位ID");
             }else{
@@ -74,7 +74,7 @@
             <table border=0>
                 <tr>
                     <!--表单 post请求-->
-                    <form action="/search-book" method="post">
+                    <form action="/search-book" method="post" name = "searchForm">
                         {% csrf_token %}
 
 
