@@ -59,9 +59,10 @@
     <h2> {{ data2 }} </h2>
     <center>
     <ol start = 1 style="list-style-position:inside">
-    {% for book1 in ans_list %}
-    
-        <li>{{ book1 }}
+        {% for book1 in ans_list %}
+            <li>
+            <a href = https://book.douban.com/subject_search?search_text={{ book1 }}>{{ book1 }}</a>
+            </li>
     
     {% endfor %}
     </ol>
