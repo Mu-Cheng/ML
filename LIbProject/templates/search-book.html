@@ -53,13 +53,13 @@
     <div align = "center" style="color:#FFFFFF">
     <h1>输入学号进行推荐：</h1>
     <div class="input-group">
-            <table border=1><tr>
+            <table border=0><tr>
     <form action="/search-book" method="post">
         {% csrf_token %}
         
             
-                <th valign = "middle"><input type="text" name="q" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2"/></th>
-                <th valign = "middle"><input type="submit" value="推荐" /></th>
+                <th valign = "top"><input type="text" name="q" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2"/></th>
+                <th valign = "top"><input type="submit" value="推荐" /></th>
             
             
         <!--<div class="input-group">
