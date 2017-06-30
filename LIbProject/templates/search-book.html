@@ -15,16 +15,17 @@
 </head>
 <body>
     <h1 align="center" >输入学号进行推荐：</h1>
+    <div align = "center">
     <form action="/search-book" method="post">
         {% csrf_token %}
-        <input align = "center" type="text" name="q">
-        <input align = "center" type="submit" value="推荐">
+        <input type="text" name="q">
+        <input type="submit" value="推荐">
         <!--<div class="input-group">
             <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">@example.com</span>
         </div>-->
     </form>
-
+    </div>
     <h2 align = "center"> {{ data1 }} </h2>
     {% for book in borrow_list %}
     <p align = "center">{{ book }}</p>
