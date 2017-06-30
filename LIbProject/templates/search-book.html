@@ -12,6 +12,23 @@
     <style type="text/css" src="{% static 'bootstrap/css/bootstrap.css' %}"></style>
     <meta charset="UTF-8">
     <style>
+        a:link { 
+        color:#FFFFFF; 
+        text-decoration:underline; 
+        } 
+        a:visited { 
+        color:#000000; 
+        text-decoration:none; 
+        } 
+        a:hover { 
+        color:#FFFFFF; 
+        text-decoration:none; 
+        } 
+        a:active { 
+        color:#FFFFFF; 
+        text-decoration:none; 
+        } 
+
         *html body{height:100%}
         .mask{
             position:absolute;
@@ -61,9 +78,9 @@
     <ol start = 1 style="list-style-position:inside">
         {% for book1 in ans_list %}
             <li>
-            <a href = https://book.douban.com/subject_search?search_text={{ book1 }} >
-                <font color="white">{{ book1 }}
-                </font> 
+            <a href = https://book.douban.com/subject_search?search_text={{ book1 }}>
+                {{ book1 }}
+                
             </a>
             </li>
     
