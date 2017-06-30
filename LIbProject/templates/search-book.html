@@ -53,8 +53,9 @@
             var str = document.searchForm.q.value;
             if(str.length!=8){
                 alert("请输入八位ID");
+                return false;
             }else{
-                ;
+                return true;
             }
         }
     </script>
@@ -82,7 +83,7 @@
                             <input type="text" name="q" class="form-control" placeholder="输入八位学号" aria-describedby="basic-addon2"
                             /></th>
                         <th valign="middle"><span class="input-group-addon" id="basic-addon2">
-                            <input  type="submit" value="推荐" class="input-group-addon" onClick= "isStudentID()" /></span></th>
+                            <input  type="submit" value="推荐" class="input-group-addon" onClick= "return isStudentID()" /></span></th>
 
                         <!--<input type="submit" value="推荐" class="input-group-addon" />-->
                         <!--<div class="input-group">
