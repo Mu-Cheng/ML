@@ -52,24 +52,25 @@
     
     <div align = "center" style="color:#FFFFFF">
     <h1>输入学号进行推荐：</h1>
-    
+    <div class="input-group">
+            <table border=1><tr>
     <form action="/search-book" method="post">
         {% csrf_token %}
-        <div class="input-group">
-            <table border=1>
-            <tr>
+        
+            
                 <th><input type="text" name="q" /></th>
                 <th><input type="submit" value="推荐" /></th>
-            </tr>
-            </table>
             
-        </div>
+            
         <!--<div class="input-group">
             <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">@example.com</span>
         </div>-->
     </form>
-    
+    </tr>
+    </table>
+            
+        </div>
     <h2> {{ data1 }} </h2>
     <center>
     <ol start = 1 style="list-style-position:inside">
