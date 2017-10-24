@@ -6,6 +6,7 @@ from django.http import HttpResponse
 import random
 
 from model.models import userinfo,borrow_data,book_edge
+from . import Singleton
 
 def findData(studentID):
     # 初始化
@@ -19,6 +20,8 @@ def findData(studentID):
 
     # filter相当于SQL中的WHERE，可设置条件过滤结果
     # studentID = '20141534'
+    singletonData = Singleton.SingletonData()
+
     response2 = borrow_data.objects.filter(studentID=studentID).values()
 
     # 获取单个对象
@@ -57,36 +60,19 @@ def findData(studentID):
     ans['data2'] = "为"+studentID + "推荐的书籍为："
     # response1 = response1 + "<h2>为" + studentID + "推荐的书籍为：" + "</h2>"
     num = 10
-    minNum = 0
-    maxNum = 0
-    if lenBook <= num:
-        minNum = lenBook
-    else:
-        minNum = num
-
     if lenBook < num:
-        maxNum = num
-    else:
-        maxNum = lenBook
-
-
+        num = lenBook
     ans['ans_list'] = []
     # i = num - 1
-    # while i != -1:
-        # book = books[i]
-        # ans['ans_list'].append(book)
-        # i = i - 1
-    se = set()
-    for i in range(minNum):
-        while True:
-            book = books[random.randint(0,lenBook-1)]
-            if book in se:
-                continue
-            else:
-                se.add(book)
-                ans['ans_list'].append(book)
-                break
-        
+    i = lenBook - 1
+    while i != -1:
+        book = books[i]
+        if book != None and book != "":
+            ans['ans_list'].append(book)
+        i = i - 1
+    # for i in range(num):
+    #     book = books[random.randint(0,num-1)]
+    #     ans['ans_list'].append(book)
         # response1 = response1 + str(book) + "</br>"
     # return "<p>" + response1+ "</p>"
     return ans

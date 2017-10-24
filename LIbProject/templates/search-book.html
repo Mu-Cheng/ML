@@ -1,128 +1,140 @@
-{% load static %} {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
-    <script src="//upcdn.b0.upaiyun.com/libs/jqueryui/jquery.ui-1.9.0.min.js"></script>
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <link href="http://apps.bdimg.com/libs/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-    <style type="text/css" src="{% static 'bootstrap/css/bootstrap.css' %}"></style>
     <meta charset="UTF-8">
-    <style>
-        a:link {
-            color: #FFFFFF;
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: #BBFFFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-
-        a:active {
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-
-        *html body {
-            height: 100%
-        }
-
-        .mask {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 100;
-            height: 100%;
-            width: 100%;
-            background: black;
-            opacity: 0.4;
-            filter: alpha(opacity=40)
-        }
-    </style>
-    <script>
-        function isStudentID(){
-            var str = document.searchForm.q.value;
-            if(str.length!=8){
-                alert("请输入八位ID");
-                return false;
-            }else{
-                return true;
-            }
-        }
-    </script>
     <title>天津理工大学图书推荐系统</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!--<script type="text/javascript" src="/static/bootstrap-paginator/jquery-1.9.0.min.js"></script>-->
+
+    <!--<script type="text/javascript" src="/static/bootstrap-paginator/bootstrap-paginator.js"></script>-->
+
+    <!--<script src="/static/bootstrap-paginator/bootstrap.js"></script>-->
+
+    <!--<link href="/static/bootstrap-paginator/bootstrapv3.css" rel="stylesheet">-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<style>-->
+        <!--body{text-align:center}-->
+        <!--#divcss5{margin:0 auto;border:1px solid #000;width:300px;height:100px}-->
+    <!--</style>-->
 </head>
 
+
 <body>
-    <div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1">
-        <img style="position:fixed;" src="http://lib.tjut.edu.cn/lib/WebUI/images/searchbox.jpg" height="100%" width="100%" />
-        <div class=mask></div>
-    </div>
+    <!--<h1>输入学号进行推荐：</h1>-->
+    <!--<form class="navbar-form navbar-left" role="search">-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" placeholder="Search">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+    <!--</form>-->
 
-    <div align="center" style="color:#FFFFFF">
-        <h1>输入学号进行推荐：</h1>
-        <div class="input-group">
-            <!--表格-->
-            <table border=0>
-                <tr>
-                    <!--表单 post请求-->
-                    <form action="/search-book" method="post" name = "searchForm">
-                        {% csrf_token %}
+    <!--<div class="col-lg-6">-->
+    <!--<div class="input-group">-->
+      <!--<input type="text" class="form-control" placeholder="Search for...">-->
+      <!--<span class="input-group-btn">-->
+        <!--<button class="btn btn-default" type="button">Go!</button>-->
+      <!--</span>-->
+    <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
+  <!--</div>-->
 
-
-                        <th valign="baseline">
-                            <input type="text" name="q" class="form-control" placeholder="输入八位学号" aria-describedby="basic-addon2"
-                            /></th>
-                        <th valign="middle"><span class="input-group-addon" id="basic-addon2">
-                            <input  type="submit" value="推荐" class="input-group-addon" onClick= "return isStudentID()" /></span></th>
-
-                        <!--<input type="submit" value="推荐" class="input-group-addon" />-->
-                        <!--<div class="input-group">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-            <span class="input-group-addon" id="basic-addon2">@example.com</span>
-        </div>-->
-                    </form>
-                </tr>
-            </table>
-
+    <!--<div class="div">-->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+        <!--<div class="row">-->
+            <!--<div class="col-md-6 col-md-offset-3">-->
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">天津理工大学图书馆图书推荐系统</a>
         </div>
-        <h2> {{ data1 }} </h2>
-        <center>
-            <ol start=1 style="list-style-position:inside">
-                {% for book in borrow_list %}
-                <li>{{ book }} {% endfor %}
-            </ol>
-        </center>
-        <h2> {{ data2 }} </h2>
-        <center>
-            <ol start=1 style="list-style-position:inside">
-                {% for book1 in ans_list %}
-                <li>
-                    <a href=h ttps://book.douban.com/subject_search?search_text={{ book1 }}>
-                {{ book1 }}
-                
-            </a>
-                </li>
+        <form class="navbar-form navbar-center" role="search" action="/search-book" method="post">
+            <div class="form-group">
+                <input type="text" name = "q" class="form-control" placeholder="输入学号">
+            </div>
+            <button type="submit" class="btn btn-default">推荐</button>
+            {% csrf_token %}
+        </form>
+        <!--</div>-->
+            </div>
+        </div>
+    </nav>
 
+    <!--<form class="navbar-form navbar-center" role="search" action="/search-book" method="post">-->
+        <!--<div class="col-lg-6">-->
+            <!--<div class="input-group" >-->
+            <!--<input type="text" name = "q" class="form-control" id="searchInput" placeholder="输入学号" required/>-->
+            <!--&lt;!&ndash;<input type="text" name="q">&ndash;&gt;-->
+            <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-default" type="submit" value="">推荐</button>-->
+            <!--</span>-->
+            <!--&lt;!&ndash;<button type="submit" value="Submit" class="btn btn-default">推荐</button>&ndash;&gt;-->
+                <!---->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--<div class="pagination">-->
+    <!--<div>-->
+              <!--<div>-->
+          <!--<table class="table table-striped"  id='testTable' ></table>-->
+      <!--</div>-->
+      <!--<div style="text-align:right;">-->
+          <!--<ul id="example"></ul>-->
+          <!--</div>-->
+   <!--</div>-->
+
+    <div class="container">
+    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="col-md-6 col-md-offset-3">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="list-group">&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="#" class="list-group-item active">&ndash;&gt;-->
+                    <!--&lt;!&ndash;{{ data1 }}&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;{% for book in borrow_list %}&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="#" class="list-group-item">{{ book }}</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h2> {{ data1 }} </h2>&ndash;&gt;-->
+    <!--&lt;!&ndash;{% for book in borrow_list %}&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{ book }}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    {{ data2 }}
+                <!--</a>-->
+                {% for book1 in ans_list %}
+                <a href="https://book.douban.com/subject_search?search_text={{ book1 }}" class="list-group-item">{{ book1 }}</a>
                 {% endfor %}
-            </ol>
-        </center>
-        <!--{{ return_ans }}-->
-        <!--<form action="/search" method="get">-->
+            </div>
+    <!--&lt;!&ndash;<h3> {{ data2 }} </h3>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;{% for book1 in ans_list %}&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{ book1 }}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    </div>
+    <!--{{ return_ans }}-->
+    <!--<form action="/search" method="get">-->
         <!--<input type="text" name="q">-->
         <!--<input type="submit" value="推荐">-->
-        <!--</form>-->
-    </div>
-
+    <!--</form>-->
 </body>
-
 </html>

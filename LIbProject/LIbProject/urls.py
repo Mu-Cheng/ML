@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import *
 from django.contrib import admin
-
+from django.conf import settings
+from django.conf.urls.static import static
 from . import view,opDB,search,settings
 
 urlpatterns = [
     url(r'^$',view.hello),
     url(r"^opDB",opDB.findData),
     url(r'^admin/', admin.site.urls),
-    url(r'^search-book$',search.search),
+    url(r'^search-book',search.search),
     url(r'^search$',search.search),
-    # url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),# 注意添加
-]
+    # url(r'^index/$',"blog.views.index"),
+    # url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+]+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

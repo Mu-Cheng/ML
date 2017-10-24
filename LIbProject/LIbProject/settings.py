@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'pagination',
     'model',
 ]
 
@@ -49,6 +50,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# MIDDLEWARE_CLASSES = (
+#         # ...
+#         'pagination.middleware.PaginationMiddleware',
+# )
+
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#         "django.core.context_processors.auth",
+#         "django.core.context_processors.debug",
+#         "django.core.context_processors.i18n",
+#         "django.core.context_processors.media",
+#         "django.core.context_processors.request"
+#     )
 
 ROOT_URLCONF = 'LIbProject.urls'
 
@@ -63,7 +77,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'django.core.context_processors.static',#一定要加上
             ],
         },
     },
@@ -125,8 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),#此处必须，为新添加
-)
+# STATICFILES_DIRS = (
+#           os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
+# )
+#
+# STATIC_ROOT = os.path.join(os.path.dirname(__file__), '..', 'static/weui-1.1.2').replace('\\','/')
